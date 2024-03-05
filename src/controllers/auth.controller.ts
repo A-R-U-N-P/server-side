@@ -3,7 +3,7 @@ import express from 'express';
 import { logger } from '../shared/helper/logger';
 import User from '../model/users.model';
 import Organization from '../model/organization.model';
-import { comparePassword, hashPassword } from '../shared/helper/hash-password';
+import { hashPassword } from '../shared/helper/hash-password';
 import Auth from '../model/auth.model';
 import jwt from 'jsonwebtoken';
 import { JwtOptions } from '../config/passport.config';

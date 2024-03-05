@@ -1,17 +1,18 @@
 import { Router } from 'express';
-import { OrgController } from '../controllers/organization.controller';
 import { UserController } from '../controllers/user.controller';
+import { jwtMiddleWare } from '../config/passport.config';
 
 const UserRouter = Router();
 
 /* ---------------------ROUTER 2-------------------------------------*/
 UserRouter.get(
   '/userId/:id',
+  jwtMiddleWare,
   UserController.getuserByUserId
 );
 
 UserRouter.get(
-  '/organizationId/:id',
+  '/organizationId/:id', jwtMiddleWare,
   UserController.getusersByOrganizationId
 );
 /* -----------------------------------------------------------------*/

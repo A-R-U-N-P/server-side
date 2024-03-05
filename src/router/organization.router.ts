@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { OrgController } from '../controllers/organization.controller';
+import { jwtMiddleWare } from '../config/passport.config';
 
 const OrgRouter = Router();
 
@@ -9,7 +10,7 @@ OrgRouter.get(
   OrgController.getAllOrg
 );
 OrgRouter.get(
-  '/:id',
+  '/:id', jwtMiddleWare,
   OrgController.getById
 );
 /* -----------------------------------------------------------------*/
